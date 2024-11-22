@@ -1,7 +1,11 @@
 console.log("Hello World")
 
 function sum(a, b){
-    return a+b;
+    if(isNaN(a) || isNaN(b)){
+        return "Not a nuber";
+    }else{
+        return a+b;
+    }
 }
 
 console.log(sum(7,3));
@@ -12,7 +16,7 @@ let oneEuroIs = {
     "JPY": 156.5, // japan yen
     "USD": 1.07, // us dollar
     "GBP": 0.87, // british pound
-}
+};
 
 function fromDollarToYen(dollar){
     let euros = dollar / oneEuroIs.USD;

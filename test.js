@@ -9,6 +9,11 @@ test('adds 14 + 9 to equal 23', () => {
     expect(total).toBe(23);
 }); 
 
+test('adds something + 9 to equal nothing', () => {
+    let total = sum('catorce', 9);
+    expect(total).toBe("Not a nuber");
+}); 
+
 
 test("One euro should be 1.07 dollars", function() {
     // Importo la funcion desde app.js
@@ -25,19 +30,15 @@ test("One euro should be 1.07 dollars", function() {
 })
 
 test("One dollar should be 146.26 yenes", function() {
-    // Importo la funcion desde app.js
     const { fromDollarToYen } = require('./app.js');
     const yenes = fromDollarToYen(3.5);
     const expected2 = 3.5 * 146.26;
-    // Hago mi comparación (la prueba)
     expect(fromDollarToYen(3.5)).toBe(511.92); 
 })
 
 test("One yen should be 0.00556 punds", function() {
-    // Importo la funcion desde app.js
     const { fromYenToPound } = require('./app.js');
     const Pounds4 = fromYenToPound(3.5);
     const expected3 = 3.5 *  0.00556;
-    // Hago mi comparación (la prueba)
     expect(fromYenToPound(3.5)).toBe(0.01946); 
 })
